@@ -1,0 +1,10 @@
+@media(max-width:900px){
+.hero-content,.about-grid,.contact-grid,.focus-content,.footer-content{grid-template-columns:1fr;flex-direction:column}
+.projects-grid,.skills-grid{grid-template-columns:1fr}
+.form-row{flex-direction:column}
+#navMenu{display:none;position:absolute;top:62px;left:0;width:100%;background:#fff;flex-direction:column;padding:20px;box-shadow:0 10px 20px rgba(0,0,0,.1)}
+#navMenu.show{display:flex}
+.menu-btn{display:block}
+.hero{padding:60px 0}.hero h1{font-size:38px}
+.code-window{width:100%;margin-top:20px}
+}
