@@ -33,7 +33,6 @@
    .profile-card{position:relative;background:rgba(255,255,255,.97);color:var(--ink);border-radius:28px;padding:28px;box-shadow:0 30px 80px rgba(15,15,35,.28);border:1px solid rgba(255,255,255,.7)}
    .profile-top{display:flex;align-items:center;gap:16px}
    .profile-img{width:82px;height:82px;border-radius:22px;object-fit:cover;border:4px solid #f0eeff;background:#f0eeff}
-   .upload-btn{border:1px dashed #cfc9ff;background:#f5f3ff;color:var(--primary);border-radius:13px;font-weight:700;font-size:.8rem;padding:11px}
    .stack-box{margin-top:18px;padding:17px;background:#fafaff;border:1px solid #eceaff;border-radius:18px}
    .tag{display:inline-block;margin:4px 3px 0 0;padding:6px 10px;border-radius:999px;background:#f0eeff;border:1px solid #e4e0ff;color:var(--primary);font-size:.69rem;font-weight:700}
    .soft-section{background:linear-gradient(180deg,#fbfaff 0%,#fff 100%)}
@@ -87,8 +86,7 @@
       </div>
       <div class="col-lg-5">
         <div class="profile-card">
-          <div class="profile-top"><img id="profilePhoto" src="https://i.pravatar.cc/300?img=32" class="profile-img" alt="Nairuba Irene"><div><h5 class="fw-bold mb-1">Nairuba Irene</h5><div class="text-muted small">Full Stack + AI</div><div class="small mt-1">irenenairuba125@gmail.com</div></div></div>
-          <input type="file" id="uploadPic" accept="image/*" hidden><button type="button" onclick="document.getElementById('uploadPic').click()" class="btn upload-btn w-100 mt-4"><i class="bi bi-camera me-1"></i> Upload Your Photo</button>
+          <div class="profile-top"><img id="profilePhoto" src="profile.jpg" class="profile-img" alt="Nairuba Irene"><div><h5 class="fw-bold mb-1">Nairuba Irene</h5><div class="text-muted small">Full Stack + AI</div><div class="small mt-1">irenenairuba125@gmail.com</div></div></div>
           <div class="stack-box"><div class="text-uppercase fw-bold text-muted" style="font-size:.68rem;letter-spacing:.12em">My Stack</div><div class="mt-2"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">Flutter</span><span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">TensorFlow</span></div></div>
         </div>
       </div>
@@ -156,6 +154,6 @@
   <a href="https://wa.me/256745375929" target="_blank" class="text-white-50">WhatsApp</a>
 </div></footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>document.getElementById("year").textContent=new Date().getFullYear();document.getElementById("uploadPic").addEventListener("change",function(e){const file=e.target.files[0];if(file){const url=URL.createObjectURL(file);document.getElementById("profilePhoto").src=url}}) </script>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
