@@ -5,558 +5,157 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Nairuba Irene — Full Stack Developer portfolio">
   <title>Nairuba Irene | Full Stack Developer</title>
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --primary:#6c5ce7;
-      --primary-2:#8b7cf6;
-      --ink:#111322;
-      --muted:#697386;
-      --soft:#f6f5ff;
-      --line:#e9e8f2;
-      --dark:#10111c;
-      --success:#16c79a;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--ink);
-      background:#fff;
-      overflow-x:hidden;
-    }
-    a{text-decoration:none}
-    .section{padding:100px 0}
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 13px;
-      border-radius:999px;
-      background:#f0eeff;
-      color:var(--primary);
-      font-size:.72rem;
-      font-weight:800;
-      letter-spacing:.08em;
-    }
-
-    /* Navbar */
-    .navbar{
-      background:rgba(255,255,255,.84);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(233,232,242,.75);
-    }
-    .logo{
-      color:var(--ink);
-      font-weight:900;
-      letter-spacing:-.04em;
-    }
-    .logo-mark{
-      display:inline-grid;
-      place-items:center;
-      width:40px;height:40px;
-      margin-right:9px;
-      border-radius:12px;
-      background:linear-gradient(135deg,var(--primary),#4834d4);
-      color:#fff;
-      box-shadow:0 8px 22px rgba(108,92,231,.25);
-    }
-    .nav-link{
-      color:#4d5565!important;
-      font-size:.9rem;
-      font-weight:600;
-      transition:.25s ease;
-    }
-    .nav-link:hover{color:var(--primary)!important}
-
-    /* Hero */
-    .hero{
-      position:relative;
-      padding:120px 0 90px;
-      color:#fff;
-      background:
-        radial-gradient(circle at 75% 15%,rgba(255,255,255,.16),transparent 26%),
-        radial-gradient(circle at 12% 90%,rgba(255,255,255,.10),transparent 28%),
-        linear-gradient(135deg,#5543d7 0%,#6c5ce7 42%,#3d2bb7 100%);
-      overflow:hidden;
-    }
-    .hero:before,.hero:after{
-      content:"";
-      position:absolute;
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:50%;
-      pointer-events:none;
-    }
-    .hero:before{width:520px;height:520px;right:-190px;top:-180px}
-    .hero:after{width:340px;height:340px;left:-190px;bottom:-190px}
-    .hero-content{position:relative;z-index:2}
-    .availability{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      padding:9px 14px;
-      border:1px solid rgba(255,255,255,.2);
-      background:rgba(255,255,255,.1);
-      border-radius:999px;
-      font-size:.72rem;
-      font-weight:800;
-      letter-spacing:.08em;
-    }
-    .pulse{
-      width:9px;height:9px;border-radius:50%;
-      background:#30e8b2;
-      box-shadow:0 0 0 0 rgba(48,232,178,.7);
-      animation:pulse 1.8s infinite;
-    }
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(48,232,178,.7)}
-      70%{box-shadow:0 0 0 9px rgba(48,232,178,0)}
-      100%{box-shadow:0 0 0 0 rgba(48,232,178,0)}
-    }
-    .hero h1{
-      font-size:clamp(3.1rem,7vw,5.7rem);
-      line-height:.95;
-      letter-spacing:-.07em;
-      font-weight:900;
-      margin:25px 0 18px;
-    }
-    .hero h1 span{color:#ffeaa7}
-    .hero-lead{
-      max-width:650px;
-      font-size:1.08rem;
-      line-height:1.8;
-      color:rgba(255,255,255,.82);
-    }
-    .hero-btn{
-      border-radius:999px;
-      padding:13px 22px;
-      font-weight:800;
-      transition:.25s ease;
-    }
-    .hero-btn:hover{transform:translateY(-2px)}
-    .hero-links a{color:rgba(255,255,255,.75);font-size:.84rem}
-    .hero-links a:hover{color:#fff}
-
-    /* Profile card */
-    .profile-card{
-      position:relative;
-      background:rgba(255,255,255,.97);
-      color:var(--ink);
-      border-radius:28px;
-      padding:28px;
-      box-shadow:0 30px 80px rgba(15,15,35,.28);
-      border:1px solid rgba(255,255,255,.7);
-    }
-    .profile-top{display:flex;align-items:center;gap:16px}
-    .profile-img{
-      width:82px;height:82px;
-      border-radius:22px;
-      object-fit:cover;
-      border:4px solid #f0eeff;
-      background:#f0eeff;
-    }
-    .upload-btn{
-      border:1px dashed #cfc9ff;
-      background:#f5f3ff;
-      color:var(--primary);
-      border-radius:13px;
-      font-weight:700;
-      font-size:.8rem;
-      padding:11px;
-    }
-    .stack-box{
-      margin-top:18px;
-      padding:17px;
-      background:#fafaff;
-      border:1px solid #eceaff;
-      border-radius:18px;
-    }
-    .tag{
-      display:inline-block;
-      margin:4px 3px 0 0;
-      padding:6px 10px;
-      border-radius:999px;
-      background:#f0eeff;
-      border:1px solid #e4e0ff;
-      color:var(--primary);
-      font-size:.69rem;
-      font-weight:700;
-    }
-
-    /* Cards */
-    .soft-section{background:linear-gradient(180deg,#fbfaff 0%,#fff 100%)}
-    .project-card,.skill-card{
-      height:100%;
-      padding:27px;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow:0 12px 35px rgba(35,28,90,.055);
-      transition:.3s ease;
-    }
-    .project-card:hover,.skill-card:hover{
-      transform:translateY(-7px);
-      border-color:#d8d2ff;
-      box-shadow:0 22px 50px rgba(67,52,180,.12);
-    }
-    .icon{
-      width:54px;height:54px;
-      display:grid;place-items:center;
-      border-radius:16px;
-      font-size:1.35rem;
-      margin-bottom:20px;
-    }
-    .icon-purple{background:#f0eeff;color:var(--primary)}
-    .icon-green{background:#e9fbf6;color:#10a982}
-    .icon-orange{background:#fff4e7;color:#e67e22}
-    .section-title{
-      font-size:clamp(2rem,4vw,3rem);
-      letter-spacing:-.05em;
-      font-weight:900;
-    }
-    .section-copy{
-      max-width:700px;
-      color:var(--muted);
-      line-height:1.85;
-    }
-
-    /* About */
-    .about-box{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:35px;
-      box-shadow:0 12px 35px rgba(35,28,90,.045);
-    }
-    .about-list{list-style:none;padding:0;margin:0}
-    .about-list li{
-      display:flex;gap:12px;margin-bottom:13px;
-      color:#5f6878;line-height:1.6;
-    }
-    .about-list i{color:var(--success);margin-top:3px}
-
-    /* Focus strip */
-    .focus{
-      position:relative;
-      overflow:hidden;
-      background:var(--dark);
-      color:#fff;
-    }
-    .focus:before{
-      content:"";
-      position:absolute;width:500px;height:500px;
-      right:-250px;top:-250px;
-      border:1px solid rgba(255,255,255,.07);
-      border-radius:50%;
-    }
-    .focus-item{
-      height:100%;
-      padding:17px 18px;
-      border:1px solid rgba(255,255,255,.09);
-      background:rgba(255,255,255,.045);
-      border-radius:15px;
-      color:rgba(255,255,255,.82);
-      font-size:.88rem;
-      font-weight:600;
-    }
-
-    /* Contact */
-    .contact-box{
-      padding:55px 25px;
-      border-radius:30px;
-      background:linear-gradient(135deg,#f1efff,#faf9ff);
-      border:1px solid #e5e1ff;
-    }
-    .contact-btn{
-      padding:13px 21px;
-      border-radius:999px;
-      font-weight:800;
-    }
+    :root{--primary:#6c5ce7;--ink:#111322;--muted:#697386;--line:#e9e8f2;--dark:#10111c;--success:#16c79a}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+    a{text-decoration:none}.section{padding:100px 0}
+   .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:#f0eeff;color:var(--primary);font-size:.72rem;font-weight:800;letter-spacing:.08em}
+   .navbar{background:rgba(255,255,255,.84);backdrop-filter:blur(18px);border-bottom:1px solid rgba(233,232,242,.75)}
+   .logo{color:var(--ink);font-weight:900;letter-spacing:-.04em}
+   .logo-mark{display:inline-grid;place-items:center;width:40px;height:40px;margin-right:9px;border-radius:12px;background:linear-gradient(135deg,var(--primary),#4834d4);color:#fff;box-shadow:0 8px 22px rgba(108,92,231,.25)}
+   .nav-link{color:#4d5565!important;font-size:.9rem;font-weight:600}
+   .nav-link:hover{color:var(--primary)!important}
+   .hero{position:relative;padding:120px 0 90px;color:#fff;background:radial-gradient(circle at 75% 15%,rgba(255,255,255,.16),transparent 26%),radial-gradient(circle at 12% 90%,rgba(255,255,255,.10),transparent 28%),linear-gradient(135deg,#5543d7 0%,#6c5ce7 42%,#3d2bb7 100%);overflow:hidden}
+   .hero-content{position:relative;z-index:2}
+   .availability{display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.08em}
+   .pulse{width:9px;height:9px;border-radius:50%;background:#30e8b2;box-shadow:0 0 0 0 rgba(48,232,178,.7);animation:pulse 1.8s infinite}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(48,232,178,.7)}70%{box-shadow:0 0 0 9px rgba(48,232,178,0)}100%{box-shadow:0 0 0 0 rgba(48,232,178,0)}}
+   .hero h1{font-size:clamp(3.1rem,7vw,5.7rem);line-height:.95;letter-spacing:-.07em;font-weight:900;margin:25px 0 18px}
+   .hero h1 span{color:#ffeaa7}
+   .hero-lead{max-width:650px;font-size:1.08rem;line-height:1.8;color:rgba(255,255,255,.82)}
+   .hero-btn{border-radius:999px;padding:13px 22px;font-weight:800;transition:.25s ease}
+   .hero-btn:hover{transform:translateY(-2px)}
+   .hero-links a{color:rgba(255,255,255,.75);font-size:.84rem}.hero-links a:hover{color:#fff}
+   .profile-card{position:relative;background:rgba(255,255,255,.97);color:var(--ink);border-radius:28px;padding:28px;box-shadow:0 30px 80px rgba(15,15,35,.28);border:1px solid rgba(255,255,255,.7)}
+   .profile-top{display:flex;align-items:center;gap:16px}
+   .profile-img{width:82px;height:82px;border-radius:22px;object-fit:cover;border:4px solid #f0eeff;background:#f0eeff}
+   .upload-btn{border:1px dashed #cfc9ff;background:#f5f3ff;color:var(--primary);border-radius:13px;font-weight:700;font-size:.8rem;padding:11px}
+   .stack-box{margin-top:18px;padding:17px;background:#fafaff;border:1px solid #eceaff;border-radius:18px}
+   .tag{display:inline-block;margin:4px 3px 0 0;padding:6px 10px;border-radius:999px;background:#f0eeff;border:1px solid #e4e0ff;color:var(--primary);font-size:.69rem;font-weight:700}
+   .soft-section{background:linear-gradient(180deg,#fbfaff 0%,#fff 100%)}
+   .project-card,.skill-card{height:100%;padding:27px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 12px 35px rgba(35,28,90,.055);transition:.3s ease}
+   .project-card:hover,.skill-card:hover{transform:translateY(-7px);border-color:#d8d2ff;box-shadow:0 22px 50px rgba(67,52,180,.12)}
+   .icon{width:54px;height:54px;display:grid;place-items:center;border-radius:16px;font-size:1.35rem;margin-bottom:20px}
+   .icon-purple{background:#f0eeff;color:var(--primary)}.icon-green{background:#e9fbf6;color:#10a982}.icon-orange{background:#fff4e7;color:#e67e22}
+   .section-title{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em;font-weight:900}
+   .section-copy{max-width:700px;color:var(--muted);line-height:1.85}
+   .about-box{background:#fff;border:1px solid var(--line);border-radius:24px;padding:35px;box-shadow:0 12px 35px rgba(35,28,90,.045)}
+   .about-list{list-style:none;padding:0;margin:0}.about-list li{display:flex;gap:12px;margin-bottom:13px;color:#5f6878;line-height:1.6}.about-list i{color:var(--success);margin-top:3px}
+   .focus{position:relative;overflow:hidden;background:var(--dark);color:#fff}
+   .focus-item{height:100%;padding:17px 18px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.045);border-radius:15px;color:rgba(255,255,255,.82);font-size:.88rem;font-weight:600}
+   .contact-box{padding:55px 25px;border-radius:30px;background:linear-gradient(135deg,#f1efff,#faf9ff);border:1px solid #e5e1ff}
+   .contact-btn{padding:13px 21px;border-radius:999px;font-weight:800;min-width:140px}
     footer{background:#10111c;color:#8d93a4}
-
-    @media(max-width:991px){
-      .hero{padding-top:95px}
-      .profile-card{margin-top:10px}
-    }
-    @media(max-width:575px){
-      .section{padding:75px 0}
-      .hero{padding:85px 0 70px}
-      .profile-card{padding:20px}
-    }
+    @media(max-width:991px){.hero{padding-top:95px}.profile-card{margin-top:10px}}
+    @media(max-width:575px){.section{padding:75px 0}.hero{padding:85px 0 70px}.profile-card{padding:20px}.contact-btn{width:100%}}
   </style>
 </head>
-
 <body>
 <nav class="navbar navbar-expand-lg sticky-top">
   <div class="container py-2">
-    <a class="logo d-flex align-items-center" href="#home">
-      <span class="logo-mark">NI</span>Nairuba Irene
-    </a>
-
-    <button class="navbar-toggler border-0 shadow-none" type="button"
-            data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
-            aria-expanded="false" aria-label="Toggle navigation">
-      <i class="bi bi-list fs-2"></i>
-    </button>
-
+    <a class="logo d-flex align-items-center" href="#home"><span class="logo-mark">NI</span>Nairuba Irene</a>
+    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><i class="bi bi-list fs-2"></i></button>
     <div class="collapse navbar-collapse" id="nav">
       <div class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <a class="nav-link px-3" href="#home">Home</a>
-        <a class="nav-link px-3" href="#about">About</a>
-        <a class="nav-link px-3" href="#projects">Projects</a>
-        <a class="nav-link px-3" href="#skills">Skills</a>
-        <a class="nav-link px-3" href="#contact">Contact</a>
-        <a class="btn btn-primary rounded-pill px-4 ms-lg-2" style="background:#6c5ce7;border-color:#6c5ce7"
-           href="https://www.linkedin.com/in/nairuba-irene-735399432" target="_blank" rel="noopener">
-          <i class="bi bi-linkedin me-1"></i> LinkedIn
-        </a>
+        <a class="nav-link px-3" href="#home">Home</a><a class="nav-link px-3" href="#about">About</a><a class="nav-link px-3" href="#projects">Projects</a><a class="nav-link px-3" href="#skills">Skills</a><a class="nav-link px-3" href="#contact">Contact</a>
+        <a class="btn btn-primary rounded-pill px-4 ms-lg-2" style="background:#6c5ce7;border-color:#6c5ce7" href="https://linktr.ee/irenenairuba125" target="_blank"><i class="bi bi-link-45deg me-1"></i> Linktree</a>
       </div>
     </div>
   </div>
 </nav>
-
 <header class="hero" id="home">
   <div class="container hero-content">
     <div class="row align-items-center g-5">
       <div class="col-lg-7">
         <span class="availability"><span class="pulse"></span> AVAILABLE FOR NEW PROJECTS</span>
-
         <h1>Nairuba <span>Irene</span></h1>
         <h5 class="fw-semibold mb-3">Full Stack Developer · React · Next.js · Node.js · Flutter · AI</h5>
-
-        <p class="hero-lead mb-4">
-          I build scalable, intelligent web and mobile applications with modern technology,
-          secure architecture and thoughtful user experiences.
-        </p>
-
-        <div class="d-flex flex-wrap gap-2">
-          <a href="#projects" class="btn btn-light hero-btn">View My Work <i class="bi bi-arrow-right ms-1"></i></a>
-          <a href="#contact" class="btn btn-outline-light hero-btn">Let's Talk</a>
-        </div>
-
+        <p class="hero-lead mb-4">I build scalable, intelligent web and mobile applications with modern technology, secure architecture and thoughtful user experiences.</p>
+        <div class="d-flex flex-wrap gap-2"><a href="#projects" class="btn btn-light hero-btn">View My Work <i class="bi bi-arrow-right ms-1"></i></a><a href="#contact" class="btn btn-outline-light hero-btn">Let's Talk</a></div>
         <div class="hero-links d-flex flex-wrap gap-3 mt-4">
           <a href="mailto:irenenairuba125@gmail.com"><i class="bi bi-envelope me-1"></i> irenenairuba125@gmail.com</a>
-          <a href="https://github.com/irenenairuba125-design/PATIENTMANAGEMENTSYSTEM" target="_blank" rel="noopener"><i class="bi bi-github me-1"></i> GitHub</a>
-          <a href="https://www.linkedin.com/in/nairuba-irene-735399432" target="_blank" rel="noopener"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
+          <a href="https://wa.me/256745375929" target="_blank"><i class="bi bi-whatsapp me-1"></i> WhatsApp</a>
+          <a href="https://linktr.ee/irenenairuba125" target="_blank"><i class="bi bi-link-45deg me-1"></i> Linktree</a>
+          <a href="https://www.instagram.com/ire_ne1272" target="_blank"><i class="bi bi-instagram me-1"></i> Instagram</a>
+          <a href="https://x.com/NairubaIrene" target="_blank"><i class="bi bi-twitter-x me-1"></i> X</a>
+          <a href="https://www.threads.com/@ire_ne1272" target="_blank"><i class="bi bi-threads me-1"></i> Threads</a>
         </div>
       </div>
-
       <div class="col-lg-5">
         <div class="profile-card">
-          <div class="profile-top">
-            <img id="profilePhoto" src="https://i.pravatar.cc/300?img=32" class="profile-img" alt="Nairuba Irene">
-            <div>
-              <h5 class="fw-bold mb-1">Nairuba Irene</h5>
-              <div class="text-muted small">Full Stack + AI</div>
-              <div class="small mt-1">irenenairuba125@gmail.com</div>
-            </div>
-          </div>
-
-          <input type="file" id="uploadPic" accept="image/*" hidden>
-          <button type="button" onclick="document.getElementById('uploadPic').click()" class="btn upload-btn w-100 mt-4">
-            <i class="bi bi-camera me-1"></i> Upload Your Photo
-          </button>
-
-          <div class="stack-box">
-            <div class="text-uppercase fw-bold text-muted" style="font-size:.68rem;letter-spacing:.12em">My Stack</div>
-            <div class="mt-2">
-              <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span>
-              <span class="tag">Python</span><span class="tag">PHP</span><span class="tag">Flutter</span>
-              <span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">TensorFlow</span>
-            </div>
-          </div>
+          <div class="profile-top"><img id="profilePhoto" src="https://i.pravatar.cc/300?img=32" class="profile-img" alt="Nairuba Irene"><div><h5 class="fw-bold mb-1">Nairuba Irene</h5><div class="text-muted small">Full Stack + AI</div><div class="small mt-1">irenenairuba125@gmail.com</div></div></div>
+          <input type="file" id="uploadPic" accept="image/*" hidden><button type="button" onclick="document.getElementById('uploadPic').click()" class="btn upload-btn w-100 mt-4"><i class="bi bi-camera me-1"></i> Upload Your Photo</button>
+          <div class="stack-box"><div class="text-uppercase fw-bold text-muted" style="font-size:.68rem;letter-spacing:.12em">My Stack</div><div class="mt-2"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">Flutter</span><span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">TensorFlow</span></div></div>
         </div>
       </div>
     </div>
   </div>
 </header>
-
 <section class="section" id="about">
   <div class="container">
     <div class="row align-items-center g-5">
-      <div class="col-lg-5">
-        <span class="eyebrow">ABOUT ME</span>
-        <h2 class="section-title mt-3">I Build Impactful, Intelligent Systems.</h2>
-        <p class="section-copy mt-3">
-          Focused on building intelligent, high-performance software solutions that solve
-          real-world business challenges.
-        </p>
-      </div>
-
-      <div class="col-lg-7">
-        <div class="about-box">
-          <ul class="about-list">
-            <li><i class="bi bi-check-circle-fill"></i><span>Specialized in full-stack web and mobile development with scalable, secure architecture.</span></li>
-            <li><i class="bi bi-check-circle-fill"></i><span>Experienced across modern frontends, robust backends and efficient database systems.</span></li>
-            <li><i class="bi bi-check-circle-fill"></i><span>Passionate about integrating AI and automation to improve functionality and user experience.</span></li>
-            <li><i class="bi bi-check-circle-fill"></i><span>Dedicated to solving real-world business challenges through innovative engineering.</span></li>
-            <li><i class="bi bi-check-circle-fill"></i><span>Committed to delivering future-ready products that drive growth and real impact.</span></li>
-          </ul>
-
-          <div class="mt-4 pt-3 border-top">
-            <span class="tag">Prompt Engineering</span>
-            <span class="tag">AI Agent Development</span>
-            <span class="tag">Context Engineering</span>
-          </div>
-        </div>
-      </div>
+      <div class="col-lg-5"><span class="eyebrow">ABOUT ME</span><h2 class="section-title mt-3">I Build Impactful, Intelligent Systems.</h2><p class="section-copy mt-3">Focused on building intelligent, high-performance software solutions that solve real-world business challenges.</p></div>
+      <div class="col-lg-7"><div class="about-box"><ul class="about-list"><li><i class="bi bi-check-circle-fill"></i><span>Specialized in full-stack web and mobile development with scalable, secure architecture.</span></li><li><i class="bi bi-check-circle-fill"></i><span>Experienced across modern frontends, robust backends and efficient database systems.</span></li><li><i class="bi bi-check-circle-fill"></i><span>Passionate about integrating AI and automation to improve functionality and user experience.</span></li><li><i class="bi bi-check-circle-fill"></i><span>Dedicated to solving real-world business challenges through innovative engineering.</span></li><li><i class="bi bi-check-circle-fill"></i><span>Committed to delivering future-ready products that drive growth and real impact.</span></li></ul><div class="mt-4 pt-3 border-top"><span class="tag">Prompt Engineering</span><span class="tag">AI Agent Development</span><span class="tag">Context Engineering</span></div></div></div>
     </div>
   </div>
 </section>
-
 <section class="section soft-section" id="projects">
   <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">MY WORK</span>
-      <h2 class="section-title mt-3">Featured Projects</h2>
-      <p class="section-copy mx-auto mt-2">A selection of systems and technologies I work with.</p>
-    </div>
-
+    <div class="text-center mb-5"><span class="eyebrow">MY WORK</span><h2 class="section-title mt-3">Featured Projects</h2><p class="section-copy mx-auto mt-2">A selection of systems and technologies I work with.</p></div>
     <div class="row g-4">
-      <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="icon icon-purple"><i class="bi bi-hospital"></i></div>
-          <h5 class="fw-bold">Patient Management System</h5>
-          <p class="text-muted small lh-lg">Hospital management system designed for scalable and intelligent workflows.</p>
-          <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span>
-          <div class="mt-4">
-            <a class="small fw-bold text-dark" href="https://github.com/irenenairuba125-design/PATIENTMANAGEMENTSYSTEM" target="_blank" rel="noopener">
-              View on GitHub <i class="bi bi-arrow-up-right ms-1"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="icon icon-green"><i class="bi bi-phone"></i></div>
-          <h5 class="fw-bold">Flutter Mobile App</h5>
-          <p class="text-muted small lh-lg">Cross-platform mobile applications connected to modern cloud services.</p>
-          <span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Supabase</span>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="project-card">
-          <div class="icon icon-orange"><i class="bi bi-robot"></i></div>
-          <h5 class="fw-bold">AI Agent System</h5>
-          <p class="text-muted small lh-lg">AI-focused systems using machine learning and modern AI development tools.</p>
-          <span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Python</span>
-        </div>
-      </div>
+      <div class="col-md-6 col-lg-4"><div class="project-card"><div class="icon icon-purple"><i class="bi bi-hospital"></i></div><h5 class="fw-bold">Patient Management System</h5><p class="text-muted small lh-lg">Hospital management system designed for scalable and intelligent workflows.</p><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span><div class="mt-4"><a class="small fw-bold text-dark" href="https://github.com/irenenairuba125-design/PATIENTMANAGEMENTSYSTEM" target="_blank">View on GitHub <i class="bi bi-arrow-up-right ms-1"></i></a></div></div></div>
+      <div class="col-md-6 col-lg-4"><div class="project-card"><div class="icon icon-green"><i class="bi bi-phone"></i></div><h5 class="fw-bold">Flutter Mobile App</h5><p class="text-muted small lh-lg">Cross-platform mobile applications connected to modern cloud services.</p><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">Supabase</span></div></div>
+      <div class="col-md-6 col-lg-4"><div class="project-card"><div class="icon icon-orange"><i class="bi bi-robot"></i></div><h5 class="fw-bold">AI Agent System</h5><p class="text-muted small lh-lg">AI-focused systems using machine learning and modern AI development tools.</p><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Python</span></div></div>
     </div>
   </div>
 </section>
-
 <section class="section" id="skills">
   <div class="container">
-    <div class="text-center mb-5">
-      <span class="eyebrow">TECHNOLOGY</span>
-      <h2 class="section-title mt-3">My Tech Stack</h2>
-    </div>
-
+    <div class="text-center mb-5"><span class="eyebrow">TECHNOLOGY</span><h2 class="section-title mt-3">My Tech Stack</h2></div>
     <div class="row g-4">
-      <div class="col-6 col-lg-3">
-        <div class="skill-card text-center">
-          <div class="icon icon-orange mx-auto"><i class="bi bi-cpu"></i></div>
-          <h6 class="fw-bold">AI & Machine Learning</h6>
-          <div class="mt-2"><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Claude</span><span class="tag">Gemini</span></div>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3">
-        <div class="skill-card text-center">
-          <div class="icon icon-purple mx-auto"><i class="bi bi-code-slash"></i></div>
-          <h6 class="fw-bold">Frontend</h6>
-          <div class="mt-2"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span></div>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3">
-        <div class="skill-card text-center">
-          <div class="icon icon-green mx-auto"><i class="bi bi-server"></i></div>
-          <h6 class="fw-bold">Backend & Mobile</h6>
-          <div class="mt-2"><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">Flutter</span></div>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3">
-        <div class="skill-card text-center">
-          <div class="icon icon-purple mx-auto"><i class="bi bi-database"></i></div>
-          <h6 class="fw-bold">Databases</h6>
-          <div class="mt-2"><span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">Supabase</span></div>
-        </div>
-      </div>
+      <div class="col-6 col-lg-3"><div class="skill-card text-center"><div class="icon icon-orange mx-auto"><i class="bi bi-cpu"></i></div><h6 class="fw-bold">AI & Machine Learning</h6><div class="mt-2"><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Claude</span><span class="tag">Gemini</span></div></div></div>
+      <div class="col-6 col-lg-3"><div class="skill-card text-center"><div class="icon icon-purple mx-auto"><i class="bi bi-code-slash"></i></div><h6 class="fw-bold">Frontend</h6><div class="mt-2"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span></div></div></div>
+      <div class="col-6 col-lg-3"><div class="skill-card text-center"><div class="icon icon-green mx-auto"><i class="bi bi-server"></i></div><h6 class="fw-bold">Backend & Mobile</h6><div class="mt-2"><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">Flutter</span></div></div></div>
+      <div class="col-6 col-lg-3"><div class="skill-card text-center"><div class="icon icon-purple mx-auto"><i class="bi bi-database"></i></div><h6 class="fw-bold">Databases</h6><div class="mt-2"><span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">Supabase</span></div></div></div>
     </div>
   </div>
 </section>
-
 <section class="focus py-5">
   <div class="container position-relative">
     <div class="row align-items-center g-4">
-      <div class="col-lg-5">
-        <span class="text-uppercase fw-bold small text-white-50">What I Build With</span>
-        <h3 class="fw-black display-6 mt-2 mb-0">Building Intelligent Systems Daily.</h3>
-      </div>
-      <div class="col-lg-7">
-        <div class="row g-3">
-          <div class="col-6 col-md-4"><div class="focus-item">React / Next.js</div></div>
-          <div class="col-6 col-md-4"><div class="focus-item">Flutter</div></div>
-          <div class="col-6 col-md-4"><div class="focus-item">TensorFlow / Keras</div></div>
-          <div class="col-6 col-md-4"><div class="focus-item">Node / Python / PHP</div></div>
-          <div class="col-6 col-md-4"><div class="focus-item">MySQL / Firebase / Supabase</div></div>
-          <div class="col-6 col-md-4"><div class="focus-item">AI Agent Development</div></div>
-        </div>
-      </div>
+      <div class="col-lg-5"><span class="text-uppercase fw-bold small text-white-50">What I Build With</span><h3 class="fw-black display-6 mt-2 mb-0">Building Intelligent Systems Daily.</h3></div>
+      <div class="col-lg-7"><div class="row g-3"><div class="col-6 col-md-4"><div class="focus-item">React / Next.js</div></div><div class="col-6 col-md-4"><div class="focus-item">Flutter</div></div><div class="col-6 col-md-4"><div class="focus-item">TensorFlow / Keras</div></div><div class="col-6 col-md-4"><div class="focus-item">Node / Python / PHP</div></div><div class="col-6 col-md-4"><div class="focus-item">MySQL / Firebase</div></div><div class="col-6 col-md-4"><div class="focus-item">AI Agent Dev</div></div></div></div>
     </div>
   </div>
 </section>
-
 <section class="section" id="contact">
   <div class="container">
     <div class="contact-box text-center">
       <span class="eyebrow">LET'S CONNECT</span>
       <h2 class="section-title mt-3">Let's Build Something Amazing.</h2>
       <p class="text-muted mt-2 mb-4">Uganda & Remote — Open for new projects.</p>
-
       <div class="d-flex justify-content-center flex-wrap gap-2">
-        <a href="mailto:irenenairuba125@gmail.com" class="btn text-white contact-btn" style="background:#6c5ce7">
-          <i class="bi bi-envelope me-1"></i> Email Me
-        </a>
-        <a href="https://github.com/irenenairuba125-design/PATIENTMANAGEMENTSYSTEM" target="_blank" rel="noopener" class="btn btn-dark contact-btn">
-          <i class="bi bi-github me-1"></i> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/nairuba-irene-735399432" target="_blank" rel="noopener" class="btn text-white contact-btn" style="background:#0a66c2">
-          <i class="bi bi-linkedin me-1"></i> LinkedIn
-        </a>
+        <a href="mailto:irenenairuba125@gmail.com" class="btn text-white contact-btn" style="background:#6c5ce7"><i class="bi bi-envelope me-1"></i> Email</a>
+        <a href="https://wa.me/256745375929" target="_blank" class="btn text-white contact-btn" style="background:#25D366"><i class="bi bi-whatsapp me-1"></i> WhatsApp</a>
+        <a href="https://linktr.ee/irenenairuba125" target="_blank" class="btn text-white contact-btn" style="background:#43e660"><i class="bi bi-link-45deg me-1"></i> Linktree</a>
+        <a href="https://www.instagram.com/ire_ne1272" target="_blank" class="btn text-white contact-btn" style="background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5)"><i class="bi bi-instagram me-1"></i> Instagram</a>
+        <a href="https://x.com/NairubaIrene" target="_blank" class="btn btn-dark contact-btn"><i class="bi bi-twitter-x me-1"></i> X</a>
+        <a href="https://www.threads.com/@ire_ne1272" target="_blank" class="btn btn-dark contact-btn"><i class="bi bi-threads me-1"></i> Threads</a>
+        <a href="https://github.com/irenenairuba125-design/PATIENTMANAGEMENTSYSTEM" target="_blank" class="btn btn-dark contact-btn"><i class="bi bi-github me-1"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/nairuba-irene-735399432" target="_blank" class="btn text-white contact-btn" style="background:#0a66c2"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
       </div>
     </div>
   </div>
 </section>
-
-<footer class="py-4">
-  <div class="container text-center small">
-    © <span id="year"></span> Nairuba Irene · Full Stack Developer
-  </div>
-</footer>
-
+<footer class="py-4"><div class="container text-center small">© <span id="year"></span> Nairuba Irene · Full Stack Developer —
+  <a href="https://linktr.ee/irenenairuba125" target="_blank" class="text-white-50">All Links</a> ·
+  <a href="https://wa.me/256745375929" target="_blank" class="text-white-50">WhatsApp</a>
+</div></footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  document.getElementById("uploadPic").addEventListener("change", function(e){
-    const file = e.target.files[0];
-    if(file){
-      const url = URL.createObjectURL(file);
-      document.getElementById("profilePhoto").src = url;
-    }
-  });
-</script>
+<script>document.getElementById("year").textContent=new Date().getFullYear();document.getElementById("uploadPic").addEventListener("change",function(e){const file=e.target.files[0];if(file){const url=URL.createObjectURL(file);document.getElementById("profilePhoto").src=url}}) </script>
 </body>
 </html>
